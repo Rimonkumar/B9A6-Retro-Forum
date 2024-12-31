@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body>
+
+    <nav class="w-4/5 mx-auto">
+        <div class="my-7">
+            <div class=" navbar bg-base-100">
+                <div class="flex-1">
+                    <img src="images/logo.png" alt="#">
+                </div>
+                <div class="flex-none">
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-circle">
+                            <div class="indicator tooltip" data-tip="Home">
+                                <i class="fa-sharp fa-solid fa-house"></i>
+                            </div>
+                        </div>
+                        <div tabindex="0" role="button" class="btn btn-circle">
+                            <div class="indicator tooltip" data-tip="Edit">
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+                        </div>
+                        <div tabindex="0" role="button" class="btn btn-circle">
+                            <div class="indicator tooltip" data-tip="Friends">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+                        </div>
+                        <div tabindex="0" role="button" class="btn btn-circle">
+                            <div class="indicator tooltip" data-tip="Page">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                        </div>
+                        <div class="dropdown dropdown-end ml-3">
+                            <button class="h-12 w-20 bg-blue-400 text-white font-medium rounded-full">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner section -->
+    <main class="w-4/5 mx-auto">
+        <section class="bg-black bg-cover bg-center bg-no-repeat rounded-3xl"
+            style="background-image: url(images/bgbanner.png);">
+            <div class="flex justify-around items-center h-[500px] text-white">
+                <div>
+                    <h2 class="text-5xl font-bold pb-4">Welcome to the <br> <span
+                            class="text-[rgba(121,125,252,1)]">ReTro</span> Forum</h2>
+                    <div class="text-[rgba(255,255,255,0.8)]">
+                        <p class="text-xl">Share your favorite opinion and win a<br>ReTro forum coffee mug!</p>
+                    </div>
+
+                    <div class="input input-bordered flex items-center gap-2 mt-4 rounded-full text-black">
+                        <input id="search-input-field" type="text" class="grow" placeholder="Search " />
+                        <button onclick="handleSearch()"
+                            class="btn-sm bg-blue-400 rounded-full font-medium px-7">Search</button>
+
+                    </div>
+                </div>
+
+
+                <div class=" flex sm:hidden lg:flex justify-between bg-white text-black p-7 text-xl gap-6 rounded-xl">
+                    <div>
+                        <p>Registered Users</p>
+                        <p>Forum</p>
+                        <p>Topics</p>
+                        <p>Replies</p>
+                    </div>
+                    <div>
+                        <p>01</p>
+                        <p>05</p>
+                        <p>01</p>
+                        <p>01</p>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+        </section>
+
+        <section>
+            <!-- Discussion section -->
+            <div class="text-center my-16 flex flex-col items-center">
+                <h2 class="text-3xl font-bold mb-6">Let’s Discuss</h2>
+                <p class="font-medium text-[rgba(18,19,45,0.6)] w-[650px] text-center">
+                    Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                    features allow for a streamlined experience.
+                </p>
+            </div>
+
+            <!-- loading Spinner -->
+            <div class="flex justify-center">
+                <span id="loading-spinner" class="loading loading-spinner loading-lg"></span>
+            </div>
+
+            <!-- card section -->
+            <div class="flex  sm:flex-col gap-14 lg:flex-row">
+                <div id="category-card-container" class="flex lg:flex-1 flex-col gap-5 ">
+                </div>
+
+
+                <!-- mark as read section -->
+                <div id="title-container"
+                    class="title-container lg:w-80 h-[550px] ml-10 p-5 rounded-xl bg-gray-100 sm:ml-0">
+                    <div class="flex justify-between mb-5">
+                        <h6 class="text-lg font-semibold">Title</h6>
+                        <div class="flex gap-1">
+                            <span class="material-symbols-outlined text-green-400">done_all</span>
+                            <p>Mark as read (<span id="countable-views-number">0</span>)</p>
+                        </div>
+                    </div>
+                    <div id="view-post-container">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+      <!-- Join Our Forum section -->
+
+        <section class="bg-black bg-right rounded-3xl bg-no-repeat my-18">
+            <div class="flex items-center justify-between h-[400px] text-white px-20">
+              <!-- Text Section -->
+              <div>
+                <h3 class="text-3xl font-bold mb-4">Join Our Forum</h3>
+                <p class="mb-6">Yes, you can run unit tests and view the results directly within the app.</p>
+                <button class="btn-sm bg-[rgb(121,125,252)] rounded-full font-medium px-7 py-2">
+                  Register Now
+                </button>
+              </div>
+              <!-- Image Section -->
+              <div class="flex-shrink-0">
+                <img src="images/joinforum.png" alt="Join Forum" class="h-64">
+              </div>
+            </div>
+          </section>
+          <!-- Latest Posts -->
+
+          <div class="text-center my-16 flex flex-col items-center">
+            <h2 class="text-3xl font-bold mb-6">Latest Posts</h2>
+            <p class="font-medium text-[rgba(18,19,45,0.6)] w-[650px] text-center">
+                Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
+        </div>
+
+          <!-- Add loading Spinner -->
+          <div class="flex justify-center">
+            <span id="latest-loading-spinner" class="loading loading-spinner loading-lg"></span>
+          </div>
+
+
+          <!-- latest post card -->
+        <div id="latest-post-container" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        </div>
+
+
+
+    </main>
+    <footer class="footer footer-center p-10 h-[400px] bg-gray-100">
+       <section>
+        <img src="images/logo.png" class="mb-3" alt="" >
+          <p class="mb-5 leading-relaxed">
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a<br/>
+            piece of classical Latin literature from 45 BC
+          </p>
+          <div class="flex gap-5 my-3">
+            <i class="fa-brands fa-twitter fa-xl"></i>
+            <i class="fa-brands fa-facebook-f fa-xl"></i>
+            <i class="fa-brands fa-instagram fa-xl"></i>
+            <i class="fa-brands fa-github fa-xl"></i>
+          </div>
+          <hr class="border-t-2 border-gray-300 mx-auto my-5 w-full">
+          <p>2017, All Rights Reserved.</p>
+
+       </section>
+          
+     
+      </footer>
+
+</body>
+
+</html>
